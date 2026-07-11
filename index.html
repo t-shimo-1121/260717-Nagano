@@ -14,7 +14,7 @@
 <title>白馬岳登山</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#FBF6EA;
@@ -37,7 +37,6 @@
   --radius:14px;
   --font-display:'Zen Maru Gothic',sans-serif;
   --font-body:'Noto Sans JP',sans-serif;
-  --font-hand:'Klee One',cursive;
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -78,35 +77,28 @@ body{
 }
 .cover-date-overlay{
   position:absolute;left:0;right:0;top:19%;text-align:center;z-index:3;
-  font-family:var(--font-hand);font-weight:600;color:#5E4A2E;
-  font-size:1.05rem;letter-spacing:.05em;
+  font-family:var(--font-body);font-weight:700;color:#5E4A2E;
+  font-size:1.0rem;letter-spacing:.05em;
   pointer-events:none;
 }
 
 /* ───── TODO ───── */
 .todo{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:1.6rem;}
 .todo-head{
-  font-family:var(--font-display);font-weight:700;font-size:1.02rem;
-  padding:.85rem 1rem;background:var(--berry-bg);color:var(--berry);
+  font-family:var(--font-body);font-weight:700;font-size:1.0rem;
+  padding:.85rem 1rem;background:var(--paper-2);color:var(--ink);
   border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.45rem;
 }
-.todo-head .ic{font-size:1.2rem;}
+.todo-head .ic{font-size:1.2rem;color:var(--berry);}
+.todo-cat{
+  font-weight:700;font-size:.85rem;color:var(--ink);letter-spacing:.02em;
+  padding:.75rem 1rem .3rem;display:flex;align-items:center;gap:.45rem;
+}
+.todo-cat::before{content:"";width:.4rem;height:.4rem;border-radius:50%;background:var(--berry);flex:none;}
 .todo-item{display:flex;gap:.7rem;padding:.8rem 1rem;border-bottom:1px solid var(--line-soft);align-items:center;}
 .todo-item:last-child{border-bottom:none;}
 .todo-check{flex:none;width:1.6rem;height:1.6rem;border-radius:6px;border:2px solid var(--line);}
-.todo-text{font-size:.98rem;font-weight:600;color:var(--ink);}
-
-.section{
-  display:flex;align-items:center;gap:.55rem;
-  margin:2.2rem 0 1rem;
-}
-.section .ic{
-  font-size:1.5rem;color:var(--panel);background:var(--ink);
-  width:2.1rem;height:2.1rem;padding:.4rem;border-radius:10px;stroke-width:1.9;flex:none;
-}
-.section h2{font-family:var(--font-display);font-weight:900;font-size:1.32rem;}
-.section .line{flex:1;height:3px;border-radius:3px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px);}
-.section.first{margin-top:.5rem;}
+.todo-text{font-size:.98rem;font-weight:500;color:var(--ink);}
 
 /* ───── DAY BLOCK ───── */
 .day{
@@ -119,34 +111,31 @@ body{
 .day.d3{--c:var(--wood);--c-bg:var(--wood-bg);}
 .day.d4{--c:var(--berry);--c-bg:var(--berry-bg);}
 
-.day-head{padding:.95rem 1rem .9rem;border-bottom:1px dashed var(--line);background:var(--c-bg);}
+.day-head{padding:.9rem 1rem;border-bottom:1px dashed var(--line);background:var(--c-bg);display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
 .day-tag{
-  display:inline-flex;align-items:center;gap:.35rem;
-  background:var(--c);color:#fff;font-family:var(--font-display);font-weight:700;
-  font-size:.85rem;padding:.28rem .85rem;border-radius:999px;margin-bottom:.45rem;
+  display:inline-flex;align-items:center;gap:.35rem;flex:none;
+  background:var(--c);color:#fff;font-family:var(--font-body);font-weight:700;
+  font-size:.8rem;padding:.25rem .7rem;border-radius:999px;
 }
-.day-tag .ic{font-size:1rem;stroke-width:2.2;}
-.day-title{font-family:var(--font-display);font-weight:700;font-size:1.12rem;line-height:1.5;color:var(--ink);}
+.day-tag .ic{font-size:.95rem;stroke-width:2.2;}
+.day-title{font-family:var(--font-display);font-weight:700;font-size:1.05rem;line-height:1.3;color:var(--ink);}
 
 /* trail timeline (Nagoya-Nara style) */
 .trail{list-style:none;margin-bottom:.3rem;}
-.tl{display:flex;gap:.85rem;padding:.75rem 0;border-bottom:1px dashed var(--line);}
+.tl{display:flex;gap:.85rem;padding:.75rem 1rem;border-bottom:1px dashed var(--line);}
 .tl:last-child{border-bottom:none;}
 .tl-time{flex:0 0 46px;text-align:right;}
 .tl-time .t-main{
-  display:block;font-family:var(--font-display);font-weight:700;font-size:1.02rem;
+  display:block;font-family:var(--font-body);font-weight:500;font-size:1.0rem;
   line-height:1.6rem;font-variant-numeric:tabular-nums;color:var(--ink);
 }
-.tl-time .t-sub{display:block;font-size:.83rem;color:var(--ink-3);line-height:1.5rem;margin-top:.1rem;font-variant-numeric:tabular-nums;}
+.tl-time .t-sub{display:block;font-size:.87rem;color:var(--ink-2);line-height:1.5rem;margin-top:.1rem;font-variant-numeric:tabular-nums;}
 .tl-content{flex:1;min-width:0;}
-.tl-main{font-size:.98rem;line-height:1.6rem;}
+.tl-main{font-size:.98rem;font-weight:500;line-height:1.6rem;}
 .tl-main .ico{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-right:.4rem;color:var(--c);}
 .tl-main .ico .ic{width:1.05rem;height:1.05rem;stroke-width:2.1;}
-.tl-main b{font-weight:700;}
-.tl-detail{font-size:.83rem;color:var(--ink-3);line-height:1.5rem;margin-top:.1rem;}
-
-footer{text-align:center;margin-top:2.2rem;color:var(--ink-3);font-family:var(--font-hand);font-size:.9rem;}
-footer .ic{font-size:1.1rem;color:var(--alpine);vertical-align:-.2em;}
+.tl-detail{font-size:.87rem;color:var(--ink-2);line-height:1.5rem;margin-top:.1rem;}
+.tl-detail .hl{font-weight:700;color:var(--wood);background:var(--wood-bg);padding:.03rem .35rem;border-radius:5px;}
 
 @media (max-width:420px){
   html{font-size:17px;}
@@ -154,14 +143,13 @@ footer .ic{font-size:1.1rem;color:var(--alpine);vertical-align:-.2em;}
 /* ───── DAY TABS ───── */
 .tabs{display:flex;gap:.4rem;margin:0 0 1.3rem;flex-wrap:wrap;}
 .tab-btn{
-  flex:1 1 0;min-width:66px;
-  font-family:var(--font-display);font-weight:700;font-size:.92rem;
-  padding:.5rem .3rem;border-radius:12px;border:1px solid var(--line);
+  flex:1 1 0;min-width:60px;
+  font-family:var(--font-body);font-weight:700;font-size:.88rem;
+  padding:.6rem .3rem;border-radius:12px;border:1px solid var(--line);
   background:var(--panel);color:var(--ink-2);cursor:pointer;
-  text-align:center;line-height:1.25;transition:transform .12s,background .15s,color .15s,border-color .15s;
+  text-align:center;line-height:1;transition:transform .12s,background .15s,color .15s,border-color .15s;
   -webkit-tap-highlight-color:transparent;
 }
-.tab-btn .dt{display:block;font-size:.68rem;font-weight:600;opacity:.7;margin-top:.12rem;}
 .tab-btn:active{transform:scale(.96);}
 .tab-btn.active{color:#fff;border-color:transparent;box-shadow:0 4px 10px rgba(70,55,30,.18);}
 .tab-btn.active.t0{background:var(--petal);}
@@ -222,43 +210,33 @@ footer .ic{font-size:1.1rem;color:var(--alpine);vertical-align:-.2em;}
     
   </div>
 
-  <!-- ════ 行程 ════ -->
-  <div class="section first">
-    <svg class="ic"><use href="#i-route"/></svg>
-    <h2>行程（全4日）</h2>
-    <span class="line"></span>
-  </div>
-
   <!-- ════ DAY TABS ════ -->
   <div class="tabs" role="tablist">
-    <button class="tab-btn t0 active" data-tab="todo">TODO<span class="dt">持ち物</span></button>
-    <button class="tab-btn t1" data-tab="day1">Day 1<span class="dt">7/17 金</span></button>
-    <button class="tab-btn t2" data-tab="day2">Day 2<span class="dt">7/18 土</span></button>
-    <button class="tab-btn t3" data-tab="day3">Day 3<span class="dt">7/19 日</span></button>
-    <button class="tab-btn t4" data-tab="day4">Day 4<span class="dt">7/20 月</span></button>
+    <button class="tab-btn t0 active" data-tab="todo">持ち物</button>
+    <button class="tab-btn t1" data-tab="day1">Day1</button>
+    <button class="tab-btn t2" data-tab="day2">Day2</button>
+    <button class="tab-btn t3" data-tab="day3">Day3</button>
+    <button class="tab-btn t4" data-tab="day4">Day4</button>
   </div>
 
   <div class="tab-panel is-active" id="todo">
 
-  <!-- ════ TODO ════ -->
-  <div class="todo">
-    <div class="todo-head"><svg class="ic"><use href="#i-check"/></svg>TODOリスト</div>
-    <div class="todo-item"><span class="todo-check"></span><span class="todo-text">アルピコタクシー白馬営業所へ「19:30 白馬駅迎車希望」の連絡</span></div>
-    <div class="todo-item"><span class="todo-check"></span><span class="todo-text">ダイアモックスもらう</span></div>
-    <div class="todo-item"><span class="todo-check"></span><span class="todo-text">啓発ゲートで「登山準備・ルール確認票」提示</span></div>
-  </div>
-
   <!-- ════ 持ち物リスト ════ -->
   <div class="todo">
     <div class="todo-head"><svg class="ic"><use href="#i-bag"/></svg>持ち物リスト</div>
+    <div class="todo-cat">衣類</div>
     <div class="todo-item"><span class="todo-check"></span><span class="todo-text">ザックカバー、レインパンツ、レイングローブ</span></div>
     <div class="todo-item"><span class="todo-check"></span><span class="todo-text">レインウェア、防寒着、帽子</span></div>
     <div class="todo-item"><span class="todo-check"></span><span class="todo-text">着替え下着、着替え靴下、着替え上下</span></div>
+    <div class="todo-cat">薬・衛生用品</div>
     <div class="todo-item"><span class="todo-check"></span><span class="todo-text">携帯トイレ、虫除け</span></div>
-    <div class="todo-item"><span class="todo-check"></span><span class="todo-text">充電器、モバイルバッテリー、ケーブル、ライト、ランタン、イヤホン</span></div>
     <div class="todo-item"><span class="todo-check"></span><span class="todo-text">シャンプー、ウェットティッシュ、歯磨き、鼻うがい、ティッシュ</span></div>
+    <div class="todo-item"><span class="todo-check"></span><span class="todo-text">薬（ダイアモックス、正露丸、酔い止め）</span></div>
+    <div class="todo-cat">電子機器・貴重品</div>
+    <div class="todo-item"><span class="todo-check"></span><span class="todo-text">充電器、モバイルバッテリー、ケーブル、ライト、ランタン、イヤホン</span></div>
     <div class="todo-item"><span class="todo-check"></span><span class="todo-text">iPad、Kindle、おもちゃ</span></div>
-    <div class="todo-item"><span class="todo-check"></span><span class="todo-text">薬（ダイアモックス、正露丸、酔い止め）、現金、貴重品</span></div>
+    <div class="todo-item"><span class="todo-check"></span><span class="todo-text">現金、貴重品</span></div>
+    <div class="todo-cat">食品</div>
     <div class="todo-item"><span class="todo-check"></span><span class="todo-text">7/18朝食、7/18昼食、7/18行動食、7/19行動食</span></div>
   </div>
 
@@ -274,10 +252,10 @@ footer .ic{font-size:1.1rem;color:var(--alpine);vertical-align:-.2em;}
     </div>
     <div class="trail">
       <div class="tl"><div class="tl-time"><span class="t-main">15:20</span><span class="t-sub">18</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-pin"/></svg></span>新潟駅で現地集合</div><div class="tl-detail">7/18朝食、7/18昼食、7/18行動食、7/19行動食を購入</div></div></div>
-      <div class="tl"><div class="tl-time"><span class="t-main">15:38</span><span class="t-sub">1:03</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-train"/></svg></span>上越新幹線 (新潟駅→高崎駅)</div><div class="tl-detail">「とき328号」6号車 4番 A・B・C席</div></div></div>
+      <div class="tl"><div class="tl-time"><span class="t-main">15:38</span><span class="t-sub">1:03</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-train"/></svg></span>上越新幹線 (新潟駅→高崎駅)</div><div class="tl-detail">「とき328号」<span class="hl">6号車 4番 A・B・C席</span></div></div></div>
       <div class="tl"><div class="tl-time"><span class="t-main">16:41</span><span class="t-sub">18</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-train"/></svg></span>高崎着、乗換</div><div class="tl-detail">北陸新幹線「あさま647号」（11番線）へ。余裕があれば夕食購入</div></div></div>
-      <div class="tl"><div class="tl-time"><span class="t-main">16:59</span><span class="t-sub">52</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-train"/></svg></span>北陸新幹線 (高崎駅→長野駅)</div><div class="tl-detail">「あさま647号」6号車 4番 A・B・C席。余裕があれば夕食</div></div></div>
-      <div class="tl"><div class="tl-time"><span class="t-main">17:51</span><span class="t-sub">29</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-clock"/></svg></span>長野駅東口（26番線）着</div><div class="tl-detail">特急バスは自由席先着順、切符購入・座席確保を最優先。アルピコタクシーへ「19:30白馬駅迎車」の連絡も忘れずに</div></div></div>
+      <div class="tl"><div class="tl-time"><span class="t-main">16:59</span><span class="t-sub">52</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-train"/></svg></span>北陸新幹線 (高崎駅→長野駅)</div><div class="tl-detail">「あさま647号」<span class="hl">6号車 4番 A・B・C席</span>。余裕があれば夕食</div></div></div>
+      <div class="tl"><div class="tl-time"><span class="t-main">17:51</span><span class="t-sub">29</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-clock"/></svg></span>長野駅東口（26番線）着</div><div class="tl-detail">特急バスは自由席先着順、<span class="hl">切符購入・座席確保を最優先</span>。アルピコタクシーへ「19:30白馬駅迎車」の連絡も忘れずに</div></div></div>
       <div class="tl"><div class="tl-time"><span class="t-main">18:20</span><span class="t-sub">1:02</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-bus"/></svg></span>特急バス (長野駅→白馬駅)</div><div class="tl-detail">アルピコ交通</div></div></div>
       <div class="tl"><div class="tl-time"><span class="t-main">19:22</span><span class="t-sub">18</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-car"/></svg></span>タクシー (白馬駅→ホテル)</div><div class="tl-detail">事前に連絡したタクシーに乗車</div></div></div>
       <div class="tl"><div class="tl-time"><span class="t-main">19:40</span><span class="t-sub">1:50</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-bath"/></svg></span>ホテルチェックイン</div><div class="tl-detail">館内コインランドリーで洗濯。翌朝のタクシーを予約し、就寝前にダイアモックスを服用</div></div></div>
@@ -298,7 +276,7 @@ footer .ic{font-size:1.1rem;color:var(--alpine);vertical-align:-.2em;}
     <div class="trail">
       <div class="tl"><div class="tl-time"><span class="t-main">5:30</span><span class="t-sub">30</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-sun"/></svg></span>起床、朝食・服薬</div><div class="tl-detail">軽量朝食とダイアモックスを服用。荷物を最終確認しチェックアウト</div></div></div>
       <div class="tl"><div class="tl-time"><span class="t-main">6:00</span><span class="t-sub">25</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-car"/></svg></span>タクシー (ホテル→ゴンドラ駅)</div><div class="tl-detail">前日手配済み</div></div></div>
-      <div class="tl"><div class="tl-time"><span class="t-main">6:25</span><span class="t-sub">45</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-route"/></svg></span>パノラマウェイ (山麓駅→自然園)</div><div class="tl-detail">ゴンドラ→徒歩→ロープウェイ→徒歩。往復券QRコードで引換。沿線でニホンカモシカに出会えることも</div></div></div>
+      <div class="tl"><div class="tl-time"><span class="t-main">6:25</span><span class="t-sub">45</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-route"/></svg></span>パノラマウェイ (山麓駅→自然園)</div><div class="tl-detail">ゴンドラ→徒歩→ロープウェイ→徒歩。<span class="hl">往復券QRコードで引換</span>。沿線でニホンカモシカに出会えることも</div></div></div>
       <div class="tl"><div class="tl-time"><span class="t-main">7:10</span><span class="t-sub">1:18</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-mtn"/></svg></span>登山開始 (栂池自然園→天狗原)</div><div class="tl-detail">栂池ヒュッテを通過。湿原の池塘で「カオジロトンボ」が見られるかも。安全登山啓発ゲートにてメール文面提示</div></div></div>
       <div class="tl"><div class="tl-time"><span class="t-main">8:38</span><span class="t-sub">1:42</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-mtn"/></svg></span>白馬大池山荘到着</div><div class="tl-detail">乗鞍岳を9:45に通過</div></div></div>
       <div class="tl"><div class="tl-time"><span class="t-main">10:20</span><span class="t-sub">15</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-lodge"/></svg></span>白馬大池山荘で休憩</div><div class="tl-detail">高所順応のため15分。自炊場で無料給水、売店あり。「クロサンショウウオ」「オコジョ」に出会えるかも</div></div></div>
@@ -349,9 +327,9 @@ footer .ic{font-size:1.1rem;color:var(--alpine);vertical-align:-.2em;}
       <div class="tl"><div class="tl-time"><span class="t-main">7:00</span><span class="t-sub">30</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-sun"/></svg></span>起床、準備</div></div></div>
       <div class="tl"><div class="tl-time"><span class="t-main">7:30</span><span class="t-sub">30</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-fork"/></svg></span>ご当地朝食バイキングを堪能</div><div class="tl-detail">ドーミーイン長野名物</div></div></div>
       <div class="tl"><div class="tl-time"><span class="t-main">8:00</span><span class="t-sub">25</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-route"/></svg></span>徒歩でホテルから長野駅へ</div></div></div>
-      <div class="tl"><div class="tl-time"><span class="t-main">8:25</span><span class="t-sub">49</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-train"/></svg></span>北陸新幹線 (長野駅→高崎駅)</div><div class="tl-detail">「あさま610号」6号車 4番 A・B・C席</div></div></div>
+      <div class="tl"><div class="tl-time"><span class="t-main">8:25</span><span class="t-sub">49</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-train"/></svg></span>北陸新幹線 (長野駅→高崎駅)</div><div class="tl-detail">「あさま610号」<span class="hl">6号車 4番 A・B・C席</span></div></div></div>
       <div class="tl"><div class="tl-time"><span class="t-main">9:14</span><span class="t-sub">4:14</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-clock"/></svg></span>高崎で自由時間</div><div class="tl-detail">ヤマダデンキ LABI1高崎・高崎オーパ（共に10:00開店）を訪問</div></div></div>
-      <div class="tl"><div class="tl-time"><span class="t-main">13:28</span><span class="t-sub">1:14</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-train"/></svg></span>上越新幹線 (高崎駅→新潟駅)</div><div class="tl-detail">「とき321号」6号車 14番 A・B・C席</div></div></div>
+      <div class="tl"><div class="tl-time"><span class="t-main">13:28</span><span class="t-sub">1:14</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-train"/></svg></span>上越新幹線 (高崎駅→新潟駅)</div><div class="tl-detail">「とき321号」<span class="hl">6号車 14番 A・B・C席</span></div></div></div>
       <div class="tl"><div class="tl-time"><span class="t-main">14:42</span><span class="t-sub">18</span></div><div class="tl-content"><div class="tl-main"><span class="ico"><svg class="ic"><use href="#i-car"/></svg></span>新潟駅から自宅へ車移動</div></div></div>
     </div>
   </div>
