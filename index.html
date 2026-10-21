@@ -120,6 +120,19 @@ body{
 .day-tag .ic{font-size:.95rem;stroke-width:2.2;}
 .day-title{font-family:var(--font-display);font-weight:700;font-size:1.05rem;line-height:1.3;color:var(--ink);}
 
+/* ───── ROUTE STATS CARD ───── */
+.route-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);margin:1rem 1rem 0;overflow:hidden;}
+.route-head{display:flex;align-items:center;gap:.4rem;padding:.7rem 1rem;background:var(--paper-2);font-family:var(--font-body);font-weight:700;font-size:.92rem;color:var(--ink);border-bottom:1px solid var(--line);}
+.route-head .ic{font-size:1.1rem;color:var(--c);}
+.route-peak{margin-left:auto;font-size:.76rem;font-weight:700;color:var(--c);background:var(--c-bg);padding:.25rem .6rem;border-radius:999px;white-space:nowrap;}
+.route-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+.route-item{padding:.7rem .4rem;text-align:center;border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);}
+.route-item:nth-child(3n){border-right:none;}
+.route-item:nth-child(n+4){border-bottom:none;}
+.route-label{display:block;font-size:.7rem;color:var(--ink-3);margin-bottom:.15rem;}
+.route-val{display:block;font-size:1.0rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;}
+.route-val small{font-size:.7rem;font-weight:500;color:var(--ink-2);}
+
 /* trail timeline (Nagoya-Nara style) */
 .trail{list-style:none;margin-bottom:.3rem;}
 .tl{display:flex;gap:.85rem;padding:.75rem 1rem;border-bottom:1px dashed var(--line);}
@@ -271,6 +284,18 @@ body{
     <div class="day-head">
       <span class="day-tag"><svg class="ic"><use href="#i-flag"/></svg>Day 2・7/18（土）</span>
       <div class="day-title">白馬岳登山</div>
+    </div>
+
+    <div class="route-card">
+      <div class="route-head"><svg class="ic"><use href="#i-route"/></svg>コースデータ（白馬大池ルート）<span class="route-peak">日本百名山 11座目</span></div>
+      <div class="route-grid">
+        <div class="route-item"><span class="route-label">コース定数</span><span class="route-val">44<small>・きつい</small></span></div>
+        <div class="route-item"><span class="route-label">ペース倍率</span><span class="route-val">100%<small>・標準</small></span></div>
+        <div class="route-item"><span class="route-label">コースタイム</span><span class="route-val">12:32</span></div>
+        <div class="route-item"><span class="route-label">距離</span><span class="route-val">18.6km</span></div>
+        <div class="route-item"><span class="route-label">のぼり</span><span class="route-val">1717m</span></div>
+        <div class="route-item"><span class="route-label">くだり</span><span class="route-val">1687m</span></div>
+      </div>
     </div>
 
     <div class="trail">
